@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+.navbar {
+    grid-area: navbar;
+    background-color: var(--background-green);
+    padding: 0 1rem;
+}
+
+
+.navbar a {
+    margin: 0.5rem;
+    text-decoration: none;
+}
+
+.navbar a.navbar-brand-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    font: 'Lato', san-serif;
+    color: var(--primary-green);
+}

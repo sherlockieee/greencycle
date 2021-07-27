@@ -1,13 +1,16 @@
 
 import NavBar from "./components/navBar";
 import ProductDisplay from "./components/productDisplay";
+import Footer from './components/footer';
+import './App.css';
 
 
 function App() {
   return (
-    <div className="App">
-      <NavBar/>
-      <ProductDisplay/>
+    <div className="App grid-container">
+      <NavBar className='navbar'/>
+      <ProductDisplay className='main'/>
+      <Footer className='footer'/>
     </div>
   );
 }

@@ -1,24 +1,18 @@
 import React from 'react';
-import { Navbar, Button, Nav, Container, Row, Col } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
+import '../App.css';
+import './navbar.css';
 
 export default function NavBar() {
     return (
-        <div>
-            <Container fluid>
-                <Row>
-                    <Navbar fixed="top" bg="light" expand="lg">
-                        <Col>
-                            <Navbar.Brand href="/">GreenCycle</Navbar.Brand>
-                        </Col>
-                        <Col lg={2} xl={2} md={6} xs={6} style={{'display': 'flex', 'justify-content': 'space-between'}}>
-                            <Button className='btn' href="/cart">Cart</Button>
-                            <Button variant = 'primary' href="/login">Login</Button>
-                            <Button variant = 'outline-primary' href="/signup">Sign up</Button>
-                        </Col>
-                    </Navbar>
-                </Row>
-        </Container>
-        </div>
+        <nav className='navbar row'>
+            <div>
+                <a className='navbar-brand-name' href="/">GreenCycle</a>
+            </div>
+            <div>
+                <a className='btn btn--primary' href="/cart">Cart</a>
+                <a className='btn btn--primary' href="/login">Login</a>
+                <a className='btn btn--secondary' href="/signup">Sign up</a>
+            </div>
+        </nav>
     )
 }

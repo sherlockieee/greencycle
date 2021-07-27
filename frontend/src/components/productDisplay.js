@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Row, Col, Image } from 'react-bootstrap';
 
 
 export default function ProductDisplay() {
@@ -27,7 +28,7 @@ export default function ProductDisplay() {
                         <p>{product.price}</p>
                         <p>{product.description}</p>
                         <p>{product.category}</p>
-                        <img src={product.image} alt={product.title}></img>
+                        {/* <Image src={product.image} alt={product.title} rounded fluid></Image> */}
                     </div>
                 )
                 

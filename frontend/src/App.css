@@ -1,38 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,400;0,600;0,700;1,200;1,400;1,600;1,700&display=swap');
+:root {
+  --background-green: rgba(103, 199, 145, 0.06);
+  --primary-green: rgba(91, 184, 132, 1);
+  --white: rgba(255, 255, 255, 1);
+  --dark-green: rgb(70, 145, 104);
+  --border-radius-small: 4px;
+}
 .App {
-  text-align: center;
+  margin: 0;
+  height: 100vh; 
+  font-family: 'Mulish', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  'navbar'
+  'main'
+  'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 4em 1fr auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main {
+  grid-area: main;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.row {
   display: flex;
-  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.btn {
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: var(--border-radius-small);
+}
+
+.btn--primary {
+  background-color: var(--primary-green);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn--secondary {
+  background-color: var(--white);
+  border: 1px solid var(--primary-green);
+  color: var(--primary-green);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn--primary:hover {
+  background-color: var(--dark-green);
+}
+
+.btn--secondary:hover {
+  color: var(--dark-green);
 }
