@@ -10,7 +10,7 @@ export default function NavBar() {
             </div>
             <div>
                 <a className='btn btn--primary' href="/cart">Cart</a>
-                <a className='btn btn--primary' href="/login">Login</a>
+                <a className='btn btn--primary' href="/login">Sign in</a>
                 <a className='btn btn--secondary' href="/signup">Sign up</a>
             </div>
         </nav>

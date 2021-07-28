@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,400;0,600;0,700;1,200;1,400;1,600;1,700&display=swap');
 :root {
-  --background-green: rgba(103, 199, 145, 0.06);
+  /* color */
+  --background-green: rgba(246, 252, 248, 1);
   --primary-green: rgba(91, 184, 132, 1);
   --white: rgba(255, 255, 255, 1);
   --dark-green: rgb(70, 145, 104);
+  --light-gray-border: rgba(189, 189, 189, 1);
+  --light-gray-background: rgba(246, 246, 246, 1);
+
+  /* border radius */
   --border-radius-small: 4px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 20px;
+
 }
 .App {
   margin: 0;
@@ -20,10 +28,14 @@
   'footer';
   grid-template-columns: 1fr;
   grid-template-rows: 4em 1fr auto;
+  background-color: var(--light-gray-background);
+
 }
 
 .main {
   grid-area: main;
+  display: flex;
+  overflow: auto;
 }
 
 .row {
@@ -56,4 +68,15 @@
 
 .btn--secondary:hover {
   color: var(--dark-green);
+}
+
+.image {
+  max-width: 90%;
+  max-height: 90%;
+  top: 0;
+  left: 0;
+}
+
+a {
+  text-decoration: none;
 }

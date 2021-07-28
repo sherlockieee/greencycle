@@ -1,7 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Row, Col, Image } from 'react-bootstrap';
+import '../App.css';
+import './productDisplay.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 
 export default function ProductDisplay() {
@@ -20,16 +24,26 @@ export default function ProductDisplay() {
 
 
     return (
-        <div>
+        <div className='main display-products-grid'>
             {products.map(product => {
                 return (
-                    <div>
-                        <h3>{product.title}</h3>
-                        <p>{product.price}</p>
-                        <p>{product.description}</p>
-                        <p>{product.category}</p>
-                        {/* <Image src={product.image} alt={product.title} rounded fluid></Image> */}
+                    <Link to={`products/${product.id}`}>
+                    <div key={product.id} className='display-products-card'>
+                        <div className='display-products-image-container'>
+                            <img className='image' src={product.image} alt={product.title}/>
+                        </div>
+                        <div className='display-products-text-container'>
+                            <h3 className='display-products--product-title'>{product.title}</h3>
+                            <p className='display-products--product-price'>${product.price}</p>
+                            <div className='display-products--product-rating'>
+                                {[...Array(5)].map((val, idx) => 
+                                    <FontAwesomeIcon key={idx} icon={faStar} className='display-products--rating-stars'/>
+                                )}
+                            </div>
+                            <p className='display-products--product-description'>{product.description}</p>
+                        </div>
                     </div>
+                    </Link>
                 )
                 
             })}
