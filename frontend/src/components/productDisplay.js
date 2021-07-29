@@ -1,28 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./productDisplay.css";
 import { Link } from "react-router-dom";
 import LoadingScreen from "./loadingScreen";
 import MessageBox from "./messageBox";
 import Rating from "./Rating";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { listProducts } from "./productActions";
 
 export default function ProductDisplay() {
-  const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
+  const dispatch = useDispatch();
+  const productList = useSelector((state) => state.productList);
+  const { isLoading, error, products } = productList;
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setIsLoading(true);
-        const { data } = await axios.get("/api/products");
-        setIsLoading(false);
-        setProducts(data);
-      } catch (error) {
-        setIsLoading(false);
-        setError(error.message);
-      }
-    };
-    fetchData();
+    dispatch(listProducts());
   }, []);
   return (
     <>
