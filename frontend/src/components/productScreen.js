@@ -1,13 +1,29 @@
 import React, { useState, useEffect } from "react";
 import Rating from "./Rating";
 import "./productScreen.css";
+import { detailProduct } from "./productActions";
+import { useDispatch, useSelector } from "react-redux";
+import LoadingScreen from "./loadingScreen";
+import MessageBox from "./messageBox";
+
 export default function ProductScreen(props) {
-  const [product, setProduct] = useState();
+  const dispatch = useDispatch();
+  const productId = props.match.params.id;
+  const productDetails = useSelector((state) => state.productDetails);
+  const { isLoading, error, product } = productDetails;
   const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    dispatch(detailProduct(productId));
+  }, [dispatch, productId]);
 
   return (
     <>
-      {product && (
+      {isLoading ? (
+        <LoadingScreen />
+      ) : error ? (
+        <MessageBox variant="danger" message={error}></MessageBox>
+      ) : (
         <div className="row top product-screen">
           <div className="col-1 center product-screen--image">
             <img
