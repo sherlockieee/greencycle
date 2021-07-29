@@ -1,43 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import '../App.css';
-
+import React, { useState, useEffect } from "react";
+import Rating from "./Rating";
+import data from "../data";
+import "../App.css";
+import "./productScreen.css";
 export default function ProductScreen(props) {
-    const [product, setProduct] = useState()
-    
-    useEffect(() => {
-        axios.get('https://fakestoreapi.com/products')
-        .then(res => {
-            const products = res.data;
-            const product = products.find(product => product.id.toString() === props.match.params.id);
-            setProduct(product);
-        }).catch(err => {
-            console.log(err)
-        });
-    }, [props.match.params.id])
-    
-    return (
-        <>
-            {product && 
-            (<div className='row'>
-                <div className='col-2'>
-                    <img src={product.image} alt={product.name}/>
-                </div>
-                <div className='col-1'>
-                    <h1>{product.title}</h1>
-                    <p>Rating</p>
-                    <h2>{product.price}</h2>
-                    <h2>Description:</h2>
-                    <p>{product.description}</p>
-                </div>
-                <div className='col-1'>
-                    <h2>{product.price}</h2>
-                    <h2>Status:</h2>
-                    <p>Available</p>
-                    <button class='btn btn--primary btn--block'>Add to cart</button>
-                </div>
+  const [product, setProduct] = useState();
+
+  useEffect(() => {
+    const products = data.products;
+    const product = products.find(
+      (product) => product.id.toString() === props.match.params.id
+    );
+    setProduct(product);
+    console.log(product);
+  }, [props.match.params.id]);
+
+  return (
+    <>
+      {product && (
+        <div className="row top product-screen">
+          <div className="col-1 center product-screen--image">
+            <img
+              src={product.image}
+              alt={product.name}
+              className="image image--large"
+            />
+          </div>
+          <div className="col-1 product-screen--card">
+            <h1>{product.title}</h1>
+            <Rating rating={product.rating} numReviews={product.numReviews} />
+            <div className="stocks">
+              <span className="price"> ${product.price}</span>
+              {product.availableStocks > 0 ? (
+                <span className="stocks-available">
+                  {` (${product.availableStocks} Available)`}
+                </span>
+              ) : (
+                <span className="stocks-out-of-stock"> (Out of stock)</span>
+              )}
             </div>
-            )}
-        </>
-    )
+            <button
+              className={
+                product.availableStocks > 0
+                  ? "btn btn--primary btn--block"
+                  : "btn btn--disabled btn--block"
+              }
+            >
+              Add to cart
+            </button>
+            <h3>Description:</h3>
+            <p>{product.description}</p>
+          </div>
+        </div>
+      )}
+    </>
+  );
 }

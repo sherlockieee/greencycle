@@ -48,13 +48,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.display-products--product-price {
-    font-size: 1.5em;
-    color: var(--primary-green);
-    font-weight: bold;
-    
-}
 
-.display-products--rating-stars {
-    color: #f0c14b;
+.display-products--number-of-reviews {
+    font-weight: bold;
 }
