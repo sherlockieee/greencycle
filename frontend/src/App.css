@@ -186,3 +186,15 @@ a {
 .margin-bottom-large {
   margin-bottom: var(--border-radius-large);
 }
+
+.alert {
+  padding: 20px;
+  margin-bottom: 15px;
+  width: 100%;
+  height: fit-content;
+}
+
+.alert--danger {
+  color: #a02020; 
+  background-color: #ffe0e0e0;
+}

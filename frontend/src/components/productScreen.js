@@ -1,18 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Rating from "./Rating";
-import data from "../data";
 import "./productScreen.css";
 export default function ProductScreen(props) {
   const [product, setProduct] = useState();
   const [quantity, setQuantity] = useState(1);
-
-  useEffect(() => {
-    const products = data.products;
-    const product = products.find(
-      (product) => product.id.toString() === props.match.params.id
-    );
-    setProduct(product);
-  }, [props.match.params.id]);
 
   return (
     <>
