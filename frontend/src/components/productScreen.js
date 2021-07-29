@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Rating from "./Rating";
 import data from "../data";
-import "../App.css";
 import "./productScreen.css";
 export default function ProductScreen(props) {
   const [product, setProduct] = useState();
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     const products = data.products;
@@ -12,7 +12,6 @@ export default function ProductScreen(props) {
       (product) => product.id.toString() === props.match.params.id
     );
     setProduct(product);
-    console.log(product);
   }, [props.match.params.id]);
 
   return (
@@ -38,6 +37,58 @@ export default function ProductScreen(props) {
               ) : (
                 <span className="stocks-out-of-stock"> (Out of stock)</span>
               )}
+            </div>
+            <div className="row flex-start margin-bottom-large">
+              <div className="quantity-text"> Quantity: </div>
+              <div className="row">
+                <button
+                  className="quantity"
+                  onClick={() => {
+                    if (quantity > 1) {
+                      setQuantity(quantity - 1);
+                    }
+                  }}
+                >
+                  -
+                </button>
+                <input
+                  className="quantity quantity-input"
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  min="1"
+                  max={product.availableStocks}
+                  value={quantity}
+                  onChange={(e) => {
+                    if (isNaN(+e.target.value)) {
+                      return;
+                    }
+                    setQuantity(e.target.value);
+                  }}
+                  onBlur={(e) => {
+                    if (
+                      1 <= +e.target.value &&
+                      +e.target.value <= product.availableStocks
+                    ) {
+                      setQuantity(Math.round(+e.target.value));
+                    } else if (+e.target.value <= 0) {
+                      setQuantity(1);
+                    } else if (+e.target.value > product.availableStocks) {
+                      setQuantity(product.availableStocks);
+                    }
+                  }}
+                ></input>
+                <button
+                  className="quantity"
+                  onClick={() => {
+                    if (quantity < product.availableStocks) {
+                      setQuantity(quantity + 1);
+                    }
+                  }}
+                >
+                  +
+                </button>
+              </div>
             </div>
             <button
               className={

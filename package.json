@@ -1,1 +1,26 @@
-{}
+{
+  "name": "greencycle_2",
+  "version": "1.0.0",
+  "description": "A sustainable e-commerce application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sherlockieee/greencycle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sherlockieee/greencycle/issues"
+  },
+  "homepage": "https://github.com/sherlockieee/greencycle#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongodb": "^4.0.1",
+    "mongoose": "^5.13.4",
+    "nodemon": "^2.0.12"
+  }
+}
