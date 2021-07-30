@@ -4,6 +4,7 @@
     grid-area: navbar;
     background-color: var(--background-green);
     padding: 0 1rem;
+    max-height: fit-content;
 }
 
 
@@ -18,4 +19,17 @@
     text-transform: uppercase;
     font: 'Lato', san-serif;
     color: var(--primary-green);
+}
+
+.cart-badge {
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    font-size: 0.7rem;
+    background-color: var(--primary-green);
+    color: white;
+    border: 1px solid var(--primary-green);
+    padding: 0 4px;
+    vertical-align: top;
+    margin-left: -5px;
 }

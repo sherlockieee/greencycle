@@ -1,18 +1,39 @@
-import React from 'react';
-import '../App.css';
-import './navbar.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import { Link } from "react-router-dom";
+import "../App.css";
+import "./navBar.css";
+import { useSelector } from "react-redux";
 
 export default function NavBar() {
-    return (
-        <nav className='navbar row'>
-            <div>
-                <a className='navbar-brand-name' href="/">GreenCycle</a>
-            </div>
-            <div>
-                <a className='btn btn--primary' href="/cart">Cart</a>
-                <a className='btn btn--primary' href="/login">Sign in</a>
-                <a className='btn btn--secondary' href="/signup">Sign up</a>
-            </div>
-        </nav>
-    )
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
+  return (
+    <nav className="navbar row">
+      <div>
+        <Link className="navbar-brand-name" to="/">
+          GreenCycle
+        </Link>
+      </div>
+      <div className="row">
+        <Link to="/cart">
+          <FontAwesomeIcon
+            icon={faShoppingBag}
+            size="lg"
+            className="icon-primary"
+          />
+          {cartItems.length > 0 && (
+            <span className="cart-badge">{cartItems.length}</span>
+          )}
+        </Link>
+        <Link className="btn btn--primary" to="/login">
+          Sign in
+        </Link>
+        <Link className="btn btn--secondary" to="/signup">
+          Sign up
+        </Link>
+      </div>
+    </nav>
+  );
 }

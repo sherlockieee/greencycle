@@ -198,3 +198,7 @@ a {
   color: #a02020; 
   background-color: #ffe0e0e0;
 }
+
+.icon-primary {
+  color: var(--primary-green)
+}

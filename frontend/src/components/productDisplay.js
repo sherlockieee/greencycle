@@ -13,7 +13,7 @@ export default function ProductDisplay() {
   const { isLoading, error, products } = productList;
   useEffect(() => {
     dispatch(listProducts());
-  }, []);
+  }, [dispatch]);
   return (
     <>
       {isLoading ? (
@@ -24,8 +24,8 @@ export default function ProductDisplay() {
         <div className="main display-products-grid">
           {products.map((product) => {
             return (
-              <Link to={`products/${product.id}`} key={product.id}>
-                <div className="display-products-card">
+              <div className="display-products-card" key={product.id}>
+                <Link to={`products/${product.id}`}>
                   <div className="display-products-image-container">
                     <img
                       className="image"
@@ -58,8 +58,8 @@ export default function ProductDisplay() {
                       {product.description}
                     </p>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             );
           })}
         </div>
