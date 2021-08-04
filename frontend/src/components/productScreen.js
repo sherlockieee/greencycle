@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import LoadingScreen from "./loadingScreen";
 import MessageBox from "./messageBox";
 import { Link } from "react-router-dom";
+import QuantityInput from "./QuantityInput";
 
 export default function ProductScreen(props) {
   const dispatch = useDispatch();
@@ -47,58 +48,11 @@ export default function ProductScreen(props) {
               )}
             </div>
             {product.availableStocks > 0 && (
-              <div className="row flex-start margin-bottom-large">
-                <div className="quantity-text"> Quantity: </div>
-                <div className="row">
-                  <button
-                    className="quantity"
-                    onClick={() => {
-                      if (quantity > product.availableStocks > 0 ? 1 : 0) {
-                        setQuantity(quantity - 1);
-                      }
-                    }}
-                  >
-                    -
-                  </button>
-                  <input
-                    className="quantity quantity-input"
-                    type="number"
-                    id="quantity"
-                    name="quantity"
-                    max={product.availableStocks}
-                    value={quantity}
-                    onChange={(e) => {
-                      if (isNaN(+e.target.value)) {
-                        return;
-                      }
-                      setQuantity(e.target.value);
-                    }}
-                    onBlur={(e) => {
-                      if (
-                        (product.availableStocks > 0 ? 1 : 0) <=
-                          +e.target.value &&
-                        +e.target.value <= product.availableStocks
-                      ) {
-                        setQuantity(Math.round(+e.target.value));
-                      } else if (+e.target.value <= 0) {
-                        setQuantity(1);
-                      } else if (+e.target.value > product.availableStocks) {
-                        setQuantity(product.availableStocks);
-                      }
-                    }}
-                  ></input>
-                  <button
-                    className="quantity"
-                    onClick={() => {
-                      if (quantity < product.availableStocks) {
-                        setQuantity(quantity + 1);
-                      }
-                    }}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
+              <QuantityInput
+                quantity={quantity}
+                setQuantity={setQuantity}
+                product={product}
+              />
             )}
             <Link to={`/cart/${productId}?qty=${quantity}`}>
               <button

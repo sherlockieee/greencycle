@@ -1,0 +1,40 @@
+.cartScreenContainer {
+    max-width: 90%;
+    min-width: 375px;
+    margin: 0 auto;
+}
+
+.cartItemsDisplay {
+    background-color: white;
+    margin: 20px 0px;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.cartItemProductRow {
+    box-shadow: rgb(229 229 229) 0px 0px 0px 0px inset, rgb(229 229 229) 0px 0px 0px 0px inset, rgb(229 229 229) 0px -1px 0px 0px inset, rgb(229 229 229) 0px 0px 0px 0px inset;
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    flex-wrap: nowrap;
+    padding: 24px 8px;
+
+}
+
+.cartItemProductInfo {
+    flex: 2 1 auto;
+}
+
+.cartItemProductPrice {
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex: 1 1 50px;
+}
+
+.cartItemProductImageContainer {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

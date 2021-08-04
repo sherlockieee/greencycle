@@ -59,6 +59,9 @@ p {
   grid-area: main;
   display: flex;
   overflow: auto;
+  padding: 0 2rem;
+
+
 }
 
 .row {
@@ -66,6 +69,7 @@ p {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 0 2rem;
 }
 
 .row.top {
@@ -151,8 +155,10 @@ p {
   max-height: 70vh;
 }
 
+
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 .rating-stars {
@@ -189,14 +195,22 @@ a {
 
 .alert {
   padding: 20px;
-  margin-bottom: 15px;
   width: 100%;
   height: fit-content;
+  margin-top: 1rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
 }
 
-.alert--danger {
+.danger {
   color: #a02020; 
   background-color: #ffe0e0e0;
+}
+
+.info {
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
 }
 
 .icon-primary {

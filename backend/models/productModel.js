@@ -1,5 +1,5 @@
-mongoose = require("mongoose");
-require("mongoose-type-url");
+import mongoose from "mongoose";
+import "mongoose-type-url";
 
 const productSchema = new mongoose.Schema(
   {
@@ -10,7 +10,7 @@ const productSchema = new mongoose.Schema(
     rating: { type: Number, required: true },
     numReviews: { type: Number, required: true },
     availableStocks: { type: Number, required: true },
-    image: { type: mongoose.SchemaTypes.Url, required: true },
+    image: { type: String, required: true },
   },
   {
     timestamps: true,
@@ -18,3 +18,5 @@ const productSchema = new mongoose.Schema(
 );
 
 const Product = mongoose.model("Product", productSchema);
+
+export default Product;
