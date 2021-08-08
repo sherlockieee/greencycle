@@ -14,7 +14,7 @@ export const listProducts = () => async (dispatch) => {
   });
   try {
     const { data } = await axios.get("/api/products");
-    dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
+    dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data.products });
   } catch (err) {
     dispatch({ type: PRODUCT_LIST_FAILURE, payload: err.message });
   }

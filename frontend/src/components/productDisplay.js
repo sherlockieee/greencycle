@@ -24,8 +24,8 @@ export default function ProductDisplay() {
         <div className="main display-products-grid">
           {products.map((product) => {
             return (
-              <div className="display-products-card" key={product.id}>
-                <Link to={`products/${product.id}`}>
+              <div className="display-products-card" key={product._id}>
+                <Link to={`products/${product._id}`}>
                   <div className="display-products-image-container">
                     <img
                       className="image"

@@ -11,8 +11,6 @@ const initialState = {
   },
 };
 
-console.log(initialState);
-
 const reducer = combineReducers({
   productList: productListReducer,
   productDetails: productDetailsReducer,
