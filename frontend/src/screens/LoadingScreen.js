@@ -1,5 +1,5 @@
 import React from "react";
-import "./loadingScreen.css";
+import "./LoadingScreen.css";
 
 function LoadingScreen() {
   return <div className="loader"></div>;

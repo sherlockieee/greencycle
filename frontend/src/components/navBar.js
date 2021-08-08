@@ -3,7 +3,7 @@ import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
-import "./navBar.css";
+import "./NavBar.css";
 import { useSelector } from "react-redux";
 
 export default function NavBar() {
@@ -27,7 +27,7 @@ export default function NavBar() {
             <span className="cart-badge">{cartItems.length}</span>
           )}
         </Link>
-        <Link className="btn btn--primary" to="/login">
+        <Link className="btn btn--primary" to="/signin">
           Sign in
         </Link>
         <Link className="btn btn--secondary" to="/signup">

@@ -1,10 +1,13 @@
-import NavBar from "./components/navBar";
-import ProductDisplay from "./components/productDisplay";
-import Footer from "./components/footer";
-import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
-import ProductScreen from "./components/productScreen";
-import CartScreen from "./components/CartScreen";
+
+import "./App.css";
+
+import NavBar from "./components/NavBar";
+import Footer from "./components/footer";
+import ProductScreen from "./screens/ProductScreen";
+import CartScreen from "./screens/CartScreen";
+import SignInScreen from "./screens/SignInScreen";
+import CatalogScreen from "./screens/CatalogScreen";
 
 function App() {
   return (
@@ -14,7 +17,9 @@ function App() {
         <main className="main">
           <Route path="/cart/:id?" component={CartScreen}></Route>
           <Route path="/products/:id" component={ProductScreen}></Route>
-          <Route path="/" component={ProductDisplay} exact />
+          <Route path="/signin" component={SignInScreen}></Route>
+          <Route path="/signup"></Route>
+          <Route path="/" component={CatalogScreen} exact />
         </main>
         <Footer className="footer" />
       </div>

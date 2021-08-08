@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Rating from "./Rating";
-import "./productScreen.css";
-import { detailProduct } from "./productActions";
 import { useDispatch, useSelector } from "react-redux";
-import LoadingScreen from "./loadingScreen";
-import MessageBox from "./messageBox";
 import { Link } from "react-router-dom";
-import QuantityInput from "./QuantityInput";
+
+import Rating from "../components/Rating";
+import "./ProductScreen.css";
+import LoadingScreen from "./LoadingScreen";
+import MessageBox from "../components/MessageBox";
+import QuantityInput from "../components/QuantityInput";
+import { detailProduct } from "../actions/productActions";
 
 export default function ProductScreen(props) {
   const dispatch = useDispatch();

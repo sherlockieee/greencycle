@@ -3,7 +3,7 @@ import {
   ADD_CART_ITEM,
   ADD_CART_ITEM_FAILURE,
   REMOVE_CART_ITEM,
-} from "./cartConstant";
+} from "../constants/cartConstant";
 
 export const addToCart =
   (productId, quantity) => async (dispatch, getState) => {

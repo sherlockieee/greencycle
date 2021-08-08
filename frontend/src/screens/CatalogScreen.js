@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
-import "./productDisplay.css";
 import { Link } from "react-router-dom";
-import LoadingScreen from "./loadingScreen";
-import MessageBox from "./messageBox";
-import Rating from "./Rating";
 import { useDispatch, useSelector } from "react-redux";
-import { listProducts } from "./productActions";
 
-export default function ProductDisplay() {
+import "./CatalogScreen.css";
+import LoadingScreen from "./LoadingScreen";
+import MessageBox from "../components/MessageBox";
+import Rating from "../components/Rating";
+import { listProducts } from "../actions/productActions";
+
+export default function CatalogScreen() {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
   const { isLoading, error, products } = productList;
