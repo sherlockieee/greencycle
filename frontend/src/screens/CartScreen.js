@@ -37,34 +37,36 @@ export default function CartScreen(props) {
         <div className="cartScreenContainer">
           <h1 style={{ textAlign: "center" }}>Cart Items </h1>
           <div>
-            {cartItems.map((item) => (
-              <div key={item.product} className="row top cartItemProductRow">
-                <div className="cartItemProductImageContainer">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="image image--small cartItemProductImage"
-                  />
+            {cartItems.map((item) => {
+              return (
+                <div key={item.product} className="row top cartItemProductRow">
+                  <div className="cartItemProductImageContainer">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="image image--small cartItemProductImage"
+                    />
+                  </div>
+                  <div className="cartItemProductInfo">
+                    <Link to={`/products/${item.product}`}>{item.title}</Link>
+                    <QuantityInput
+                      quantity={item.quantity}
+                      product={item}
+                      addToCartFunction={true}
+                    ></QuantityInput>
+                    <button
+                      className="btn danger"
+                      onClick={() => handleOnClickDeleteButton(item.product)}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                  <div className="price cartItemProductPrice">
+                    ${(item.price * item.quantity).toFixed(2)}
+                  </div>
                 </div>
-                <div className="cartItemProductInfo">
-                  <Link to={`/products/${item.product}`}>{item.title}</Link>
-                  <QuantityInput
-                    quantity={item.quantity}
-                    product={item}
-                    addToCartFunction={true}
-                  ></QuantityInput>
-                  <button
-                    className="btn danger"
-                    onClick={() => handleOnClickDeleteButton(item.product)}
-                  >
-                    Delete
-                  </button>
-                </div>
-                <div className="price cartItemProductPrice">
-                  ${(item.price * item.quantity).toFixed(2)}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
           <div>
             <h3 className="price">

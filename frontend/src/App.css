@@ -9,6 +9,7 @@
   --light-gray-border: rgba(189, 189, 189, 1);
   --light-gray-background: rgba(246, 246, 246, 1);
   --dark-gray-background: rgba(169, 169, 169, 1);
+  --dark-gray: rgb(121, 117, 117);
 
   /* border radius */
   --border-radius-small: 4px;
