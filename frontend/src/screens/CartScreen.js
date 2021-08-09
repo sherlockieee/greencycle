@@ -26,6 +26,10 @@ export default function CartScreen(props) {
     dispatch(removeFromCart(id));
   };
 
+  const handleOnClickCheckoutButton = () => {
+    props.history.push("/signin?redirect=shipping");
+  };
+
   return (
     <>
       {cartItems.length === 0 ? (
@@ -75,7 +79,12 @@ export default function CartScreen(props) {
                 .reduce((total, item) => total + item.quantity * item.price, 0)
                 .toFixed(2)}
             </h3>
-            <button className="btn btn--primary">Proceed to checkout</button>
+            <button
+              className="btn btn--primary"
+              onClick={handleOnClickCheckoutButton}
+            >
+              Proceed to checkout
+            </button>
           </div>
         </div>
       )}

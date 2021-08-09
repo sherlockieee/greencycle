@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { signin } from "../actions/userActions";
+import { signup } from "../actions/userActions";
 import MessageBox from "../components/MessageBox";
 import LoadingScreen from "./LoadingScreen";
-import "./SignInScreen.css";
+import "./SignUpScreen.css";
 
-function SignInScreen(props) {
+function SignUpScreen(props) {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
 
   const dispatch = useDispatch();
 
@@ -16,25 +19,47 @@ function SignInScreen(props) {
     ? props.location.search.split("=")[1]
     : "/";
 
-  const userSignIn = useSelector((state) => state.userSignIn);
-  const { userInfo, isLoading, error } = userSignIn;
+  const userSignUp = useSelector((state) => state.userSignUp);
+  const { userInfo, isLoading, error } = userSignUp;
 
   useEffect(() => {
-    if (userInfo) {
+    if (userInfo && redirect !== "/") {
       props.history.push(redirect);
     }
   }, [userInfo, redirect, props.history]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(signin(email, password));
+    if (password !== confirmPassword) {
+      setPasswordErrorMessage("Please make sure your password match");
+      return;
+    }
+    dispatch(signup(name, email, password));
   };
 
   return (
     <form className="signInForm" onSubmit={handleSubmit}>
-      <h1>Sign In </h1>
+      <h1>Sign Up </h1>
       {isLoading && <LoadingScreen />}
       {error && <MessageBox variant="danger" message={error}></MessageBox>}
+      {passwordErrorMessage && (
+        <MessageBox
+          variant="danger"
+          message={passwordErrorMessage}
+        ></MessageBox>
+      )}
+      <div>
+        <label htmlFor="name">Name: </label>
+        <input
+          type="text"
+          id="name"
+          required
+          placeholder="a cute-cumber"
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        />
+      </div>
       <div>
         <label htmlFor="email">Email address: </label>
         <input
@@ -60,15 +85,27 @@ function SignInScreen(props) {
         />
       </div>
       <div>
+        <label htmlFor="confirm-password">Confirm password: </label>
+        <input
+          type="password"
+          id="confirm-password"
+          required
+          placeholder="youareacutie;)"
+          onChange={(e) => {
+            setConfirmPassword(e.target.value);
+          }}
+        />
+      </div>
+      <div>
         <button className="btn btn--primary signInForm-button" type="submit">
-          Sign in
+          Sign up
         </button>
       </div>
       <div>
         <p>
-          New to Green Cycle?
+          Already a planet hero?
           <span>
-            <Link to={`/signup?redirect=${redirect}`}> Sign up here. </Link>
+            <Link to={`/signin?redirect=${redirect}`}> Sign in here. </Link>
           </span>
         </p>
       </div>
@@ -76,4 +113,4 @@ function SignInScreen(props) {
   );
 }
 
-export default SignInScreen;
+export default SignUpScreen;
