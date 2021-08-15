@@ -3,7 +3,7 @@
 <!-- TABLE OF CONTENTS -->
  <h2 style="display: inline-block">Table of Contents</h2>
   <ol>
-    <li>
+    <ul>
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
@@ -29,12 +29,10 @@ Project mockup came in 1st in 300 teams in AIESEC YouthSpeak 2021.
 
 ### Built With
 
-* [MongoDB] (https://www.npmjs.com/package/mongodb) for database
-* [Mongoose] (https://www.npmjs.com/package/mongoose) for object modelling
+* [MongoDB](https://www.npmjs.com/package/mongodb) & [Mongoose](https://www.npmjs.com/package/mongoose) for database
 * [React](https://www.npmjs.com/package/react) for front-end implementation
-* [Express.js](https://www.npmjs.com/package/express) for back-end implementation of web application
-* [Node.js] (https://nodejs.org/en/) for back-end implementation
-* [Redux] (https://www.npmjs.com/package/react-redux) for state management
+* [Express.js](https://www.npmjs.com/package/express) & [Node.js](https://nodejs.org/en/) for back-end implementation 
+* [Redux](https://www.npmjs.com/package/react-redux) for state management
 * [PayPal API](https://www.developer.paypal.com) for payment processing
 * [Json Web Token](https://www.npmjs.com/package/json-web-token) for encrypted data transfer
 * [React Router Dom](https://www.npmjs.com/package/react-router-dom) to manage routing
