@@ -1,0 +1,23 @@
+.orderHistory {
+    width: 100%;
+}
+
+.orderHistory h1 {
+    text-align: center;
+}
+
+.orderHistory-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orderHistory-table td, 
+.orderHistory-table th {
+    text-align: left;
+    border: 1.5px solid #e4e4e4;
+    padding: 0.5rem;
+}
+.orderHistory-table tbody tr:nth-of-type(odd) {
+    background-color: #f4f4f4;
+}
+

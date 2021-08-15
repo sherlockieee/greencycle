@@ -46,6 +46,9 @@ export default function NavBar() {
             </Link>
             <ul className="navbar-dropdown-content">
               <li>
+                <Link to="/orderhistory">Order History</Link>
+              </li>
+              <li>
                 <Link to="#signout" onClick={signOutHandler}>
                   Sign Out
                 </Link>
