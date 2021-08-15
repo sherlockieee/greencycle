@@ -35,7 +35,6 @@
   'footer';
   grid-template-columns: 1fr;
   grid-template-rows: 4em 1fr auto;
-  background-color: var(--light-gray-background);
 
 }
 
@@ -59,9 +58,9 @@ p {
 .main {
   grid-area: main;
   display: flex;
-  overflow: auto;
-  padding: 0 2rem;
-
+  /* overflow: auto; */
+  padding: 0 2rem 2rem 2rem;  
+  background-color: var(--light-gray-background);
 
 }
 

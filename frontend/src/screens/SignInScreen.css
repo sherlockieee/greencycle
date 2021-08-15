@@ -1,5 +1,8 @@
 .signInForm {
-    width: 30rem;
+    max-width: 30rem;
+    box-sizing: border-box;
+    width: 90%;
+    /* max-width: 90%; */
     height:fit-content;
     margin: 60px auto;
     background-color: white;

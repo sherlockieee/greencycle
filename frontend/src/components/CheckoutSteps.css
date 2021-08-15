@@ -1,0 +1,21 @@
+.checkout-steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 2rem;
+}
+
+.checkout-steps > div {
+    border-top: 0.3rem var(--dark-gray-background) solid;
+    color: var(--dark-gray);
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 1px;
+    margin: 1px;
+}
+
+.checkout-steps > div.active {
+    border-top-color: var(--primary-green);
+    color: var(--dark-green);
+}

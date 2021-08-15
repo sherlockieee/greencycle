@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
 
 .navbar {
+    box-sizing:border-box;
+    padding: 1rem;
+    width: 100%;
+    position: fixed;
     grid-area: navbar;
     background-color: var(--background-green);
-    padding: 0 1rem;
     max-height: fit-content;
     display: flex;
     align-items: center;
