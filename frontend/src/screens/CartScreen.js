@@ -40,10 +40,10 @@ export default function CartScreen(props) {
       ) : (
         <div className="cartScreenContainer">
           <h1 style={{ textAlign: "center" }}>Cart Items </h1>
-          <div>
+          <ul>
             {cartItems.map((item) => {
               return (
-                <div key={item.product} className="row top cartItemProductRow">
+                <li key={item.product} className="row top cartItemProductRow">
                   <div className="cartItemProductImageContainer">
                     <img
                       src={item.image}
@@ -68,10 +68,10 @@ export default function CartScreen(props) {
                   <div className="price cartItemProductPrice">
                     ${(item.price * item.quantity).toFixed(2)}
                   </div>
-                </div>
+                </li>
               );
             })}
-          </div>
+          </ul>
           <div>
             <h3 className="price">
               Total: $

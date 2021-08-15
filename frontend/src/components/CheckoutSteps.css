@@ -18,4 +18,5 @@
 .checkout-steps > div.active {
     border-top-color: var(--primary-green);
     color: var(--dark-green);
+    font-weight: bold;
 }
