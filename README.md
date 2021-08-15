@@ -3,7 +3,7 @@
 <!-- TABLE OF CONTENTS -->
  <h2 style="display: inline-block">Table of Contents</h2>
   <ol>
-    <ul>
+    <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
@@ -48,8 +48,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+* npm or yarn
   ```sh
   npm install npm@latest -g
   ```
@@ -60,9 +59,12 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/sherlockieee/greencycle.git
    ```
-2. Install NPM packages
+2. Install packages using NPM or yarn
    ```sh
    npm install
+   ```
+   ```sh
+   yarn 
    ```
 3. Run the backend server
     ```sh
@@ -72,6 +74,10 @@ This is an example of how to list things you need to use the software and how to
     ```sh
     cd frontend
     npm start
+    ```
+    ```sh
+    cd frontend
+    yarn start
     ```
 
 
