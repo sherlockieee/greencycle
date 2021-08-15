@@ -4,13 +4,12 @@ import { savePaymentMethod } from "../actions/cartActions";
 import CheckoutSteps from "../components/CheckoutSteps";
 
 function PaymentMethodScreen(props) {
-  const [paymentMethod, setPaymentMethod] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("PayPal");
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
   if (!shippingAddress.address) {
-    console.log("no shipping");
     props.history.push("/shipping");
   }
 

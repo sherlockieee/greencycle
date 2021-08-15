@@ -25,7 +25,7 @@ orderRouter.post(
       });
       const createdOrder = await order.save();
       res
-        .staus(201)
+        .status(201)
         .send({ message: "New order created", order: createdOrder });
     }
   })
