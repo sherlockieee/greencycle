@@ -12,14 +12,14 @@
 <body>
     <nav class="navbar">
         <div >
-            <a class="brandName brandName-large">GreenCycle</a>
+            <a class="brandName brandName-large" href="#intro">GreenCycle</a>
         </div>
         <div class="navbar-buttons">
             <button class="button-secondary">Tiếng Việt</button>
             <button class="button-primary">Sign up</button>
         </div>
     </nav>
-    <section class="intro">
+    <section class="intro" id="intro">
         <object class="image intro-image" data="images/image.svg" ></object>
         <div class="intro-text">
             <p class="brandName subtitle">GreenCycle</p>
@@ -31,7 +31,7 @@
             </p>
             <p class="bold">Leave your email and get immediate access when the product is released!</p>
             <form>
-                <input type="email" placeholder="Email"></input>
+                <input required type="email" placeholder="Email"></input>
                 <button class="button-primary" type="submit">Sign up</button>
             </form>
         </div>
@@ -81,27 +81,38 @@
     </section>
     <section class="customers">
         <div class="customers-slide-show">
-            <img class="image"></img>
+            
             <div class="customers-review">
-                <i></i>
-                <h3>A great, innovative product. Exactly what I've been looking for.</h3>
-                <p>Phạm Hoàng Phương, scholar</p>
+                <img class="image" src="images/placeholder.png"></img>
+                <div class="customers-review-content">
+                    <object data="icons/quoteIcon.svg"></object>
+                    <h3>I love this. I found the community I've always been looking for.</h3>
+                    <p>Pham Hoang Phuong, scholar</p>
+                </div>
             </div>
-            <div class="customers-review">
-                <i></i>
-                <h3>I love this. Exactly what I've been looking for.</h3>
-                <p>Phạm Hoàng Phương, scholar</p>
+            <div class="customers-review hidden">
+                <img class="image" src="images/placeholder.png"></img>
+                <img class="image" src="images/placeholder.png"></img>
+                <div class="customers-review-content">
+                    <object data="icons/quoteIcon.svg"></object>
+                    <h3>dez.</h3>
+                    <p>Pham Hoang Phuong, scholar</p>
+                </div>
             </div>
-            <div class="customers-review">
-                <i></i>
-                <h3>I also love this.</h3>
-                <p>Phạm Hoàng Phương, scholar</p>
+            <div class="customers-review hidden">
+                <img class="image" src="images/placeholder.png"></img>
+                <div class="customers-review-content">
+                    <object data="icons/quoteIcon.svg"></object>
+                    <h3>I also love this.</h3>
+                    <p>Pham Hoang Phuong, scholar</p>
+                </div>
             </div>
             <!-- Next and previous buttons -->
-            <a class="prev">&#10094;</a>
-            <a class="next">&#10095;</a>
+            
         </div>
-        <div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+        <div class="dots">
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
@@ -113,7 +124,7 @@
             Sign up now.</h2>
         <p class="bold">Leave your email and get information when the product is released!</p>
         <form>
-            <input type="email" placeholder="Email"></input>
+            <input required type="email" placeholder="Email"></input>
             <button class="button-primary" type="submit">Sign up</button>
         </form>
     </section>
