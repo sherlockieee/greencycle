@@ -3,7 +3,7 @@
 <!-- TABLE OF CONTENTS -->
  <h2 style="display: inline-block">Table of Contents</h2>
   <ol>
-    <ul>
+    <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
