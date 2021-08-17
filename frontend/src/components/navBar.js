@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBag, faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 import "./NavBar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { signout } from "../actions/userActions";
+
 
 export default function NavBar() {
   const cart = useSelector((state) => state.cart);

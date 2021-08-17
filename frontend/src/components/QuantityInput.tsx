@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductCheckOut, ProductDetails } from "./types";
+import { ProductCheckOut, ProductDetails } from "../types/productTypes";
 type QuantityInputProps = {
   quantity: number;
   product: ProductDetails | ProductCheckOut;

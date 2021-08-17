@@ -1,5 +1,3 @@
-import internal from "stream"
-
 export type ProductCheckOut = {
     product: string;
     availableStocks: number;

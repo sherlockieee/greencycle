@@ -6,6 +6,7 @@ import {
   CART_SAVE_SHIPPING_ADDRESS,
   REMOVE_CART_ITEM,
 } from "../constants/cartConstant";
+import { ShippingAddress } from "../types/shippingAddressType";
 
 export const addToCart =
   (productId, quantity) => async (dispatch, getState) => {
