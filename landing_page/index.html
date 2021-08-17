@@ -5,18 +5,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"/>
     <title>GreenCycle</title>
 </head>
 
 <body>
     <nav class="navbar">
         <div >
-            <a class="brandName brandName-large" href="#intro">GreenCycle</a>
+            <a class="brandName brandName-large" onclick="scrollToView('intro')">GreenCycle</a>
         </div>
         <div class="navbar-buttons">
             <button class="button-secondary">Tiếng Việt</button>
-            <button class="button-primary">Sign up</button>
+            <button class="button-primary" onclick="focusOnInput('signupinput')">Sign up</button>
         </div>
     </nav>
     <section class="intro" id="intro">
@@ -30,7 +30,7 @@
                 Don't worry, try GreenCycle today.
             </p>
             <p class="bold">Leave your email and get immediate access when the product is released!</p>
-            <form>
+            <form >
                 <input required type="email" placeholder="Email"></input>
                 <button class="button-primary" type="submit">Sign up</button>
             </form>
@@ -81,54 +81,53 @@
     </section>
     <section class="customers">
         <div class="customers-slide-show">
-            
             <div class="customers-review">
                 <img class="image" src="images/placeholder.png"></img>
                 <div class="customers-review-content">
                     <object data="icons/quoteIcon.svg"></object>
-                    <h3>I love this. I found the community I've always been looking for.</h3>
+                    <h3>I found the community I've always been looking for.</h3>
                     <p>Pham Hoang Phuong, scholar</p>
                 </div>
             </div>
-            <div class="customers-review hidden">
-                <img class="image" src="images/placeholder.png"></img>
-                <img class="image" src="images/placeholder.png"></img>
-                <div class="customers-review-content">
-                    <object data="icons/quoteIcon.svg"></object>
-                    <h3>dez.</h3>
-                    <p>Pham Hoang Phuong, scholar</p>
-                </div>
-            </div>
-            <div class="customers-review hidden">
+            <div class="customers-review">
                 <img class="image" src="images/placeholder.png"></img>
                 <div class="customers-review-content">
                     <object data="icons/quoteIcon.svg"></object>
-                    <h3>I also love this.</h3>
-                    <p>Pham Hoang Phuong, scholar</p>
+                    <h3>Easily my favourite product this year.</h3>
+                    <p>Another person, scholar</p>
                 </div>
             </div>
-            <!-- Next and previous buttons -->
-            
+            <div class="customers-review">
+                <img class="image" src="images/placeholder.png"></img>
+                <div class="customers-review-content">
+                    <object data="icons/quoteIcon.svg"></object>
+                    <h3>So excited to see what comes next for this product.</h3>
+                    <p>Pham Hoang Phuong, scholar</p>
+                </div>
+            </div>            
         </div>
-        <a class="prev">&#10094;</a>
-        <a class="next">&#10095;</a>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
         <div class="dots">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
         </div>
 
     </section>
     <section class="call-to-action">
-        <h2 class="text-center">The planet needs you.</br>
-            Sign up now.</h2>
-        <p class="bold">Leave your email and get information when the product is released!</p>
-        <form>
-            <input required type="email" placeholder="Email"></input>
-            <button class="button-primary" type="submit">Sign up</button>
-        </form>
+        <div class="call-to-action-content">
+            <h2 class="text-center">The planet needs you.</br>
+                Sign up now.</h2>
+            <p class="bold">Leave your email and get information when the product is released!</p>
+            <form id="signupform">
+                <input required type="email" placeholder="Email" id="signupinput"></input>
+                <button class="button-primary" type="submit">Sign up</button>
+            </form>
+        </div>
     </section>
     </main>
+    <script src="index.js"></script>
 </body>
 
 </html>

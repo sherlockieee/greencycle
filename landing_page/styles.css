@@ -20,9 +20,14 @@ body {
     background-color: var(--white);
     box-sizing: border-box;
 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
     font-size: 16px;
     line-height: 22px;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -65,6 +70,8 @@ button {
 
 a {
     text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 button.button-primary {
@@ -285,18 +292,18 @@ input {
     flex-direction: row;
 }
 .dot {
-    cursor: pointer;
+  cursor: pointer;
   height: 12px;
   width: 12px;
   margin: 0 3px;
-  background-color: var(--primary-green);
+  background-color: var(--text-gray);
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
-.dot:hover {
-    background-color: #717171;
+.dot:hover, .dot.active {
+    background-color: var(--primary-green);
 }
 
 .customers-review.hidden {
@@ -310,6 +317,21 @@ input {
     flex-direction: column;
     align-items: center;
     padding-bottom: 100px;
+    position: relative;
+}
+
+.call-to-action-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    background-color: var(--background-green);
+}
+
+.call-to-action-content {
+    position: relative;
 }
 
 @media only screen and (max-width: 768px) {
@@ -318,6 +340,8 @@ input {
     }
     .intro, .join-community, .customers-review {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .intro {
