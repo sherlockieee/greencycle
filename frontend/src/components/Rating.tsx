@@ -2,7 +2,12 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStarHalf, faStar } from "@fortawesome/free-solid-svg-icons";
 
-export default function Rating(props) {
+type RatingProps = {
+  rating: Number;
+  numReviews: Number;
+}
+
+export default function Rating(props: RatingProps) {
   const { rating, numReviews } = props;
   return (
     <div>

@@ -1,10 +1,14 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../actions/cartActions";
+import React from "react";
+import { ProductCheckOut, ProductDetails } from "./types";
+type QuantityInputProps = {
+  quantity: number;
+  product: ProductDetails | ProductCheckOut;
+  updateParentQuantity: (quantity: number) => void;
+  addToCartFunction: boolean;
+}
 
-function QuantityInput({ quantity = 1, product, addToCartFunction = false }) {
-  const dispatch = useDispatch();
-  const [qty, setQty] = useState(quantity);
+function QuantityInput({ quantity = 1, product, updateParentQuantity } : QuantityInputProps) {
+  const [qty, setQty] = React.useState(quantity);
   return (
     <div className="row flex-start margin-bottom-large">
       <div className="quantity-text"> Quantity: </div>
@@ -14,10 +18,10 @@ function QuantityInput({ quantity = 1, product, addToCartFunction = false }) {
           onClick={() => {
             if (qty > (product.availableStocks > 0 ? 1 : 0)) {
               setQty(qty - 1);
-              addToCartFunction &&
-                dispatch(addToCart(product.product, qty - 1));
+              updateParentQuantity(qty - 1);
             }
-          }}
+          }
+          }
         >
           -
         </button>
@@ -31,7 +35,7 @@ function QuantityInput({ quantity = 1, product, addToCartFunction = false }) {
             if (isNaN(+e.target.value)) {
               return;
             }
-            setQty(e.target.value);
+            setQty(Number(e.target.value));
           }}
           onBlur={(e) => {
             if (
@@ -39,27 +43,26 @@ function QuantityInput({ quantity = 1, product, addToCartFunction = false }) {
               +e.target.value <= product.availableStocks
             ) {
               setQty(Math.round(+e.target.value));
-              addToCartFunction &&
-                dispatch(addToCart(product.product, Number(e.target.value)));
+              updateParentQuantity(Number(e.target.value));
             } else if (+e.target.value <= 0) {
               setQty(1);
-              addToCartFunction && dispatch(addToCart(product.product, 1));
+              updateParentQuantity(Number(e.target.value));
             } else if (+e.target.value > product.availableStocks) {
               setQty(product.availableStocks);
-              addToCartFunction &&
-                dispatch(addToCart(product.product, product.availableStocks));
+              updateParentQuantity(Number(e.target.value));
             }
           }}
         ></input>
         <button
           className="quantity"
-          onClick={() => {
-            if (qty < product.availableStocks) {
-              setQty(qty + 1);
-              addToCartFunction &&
-                dispatch(addToCart(product.product, qty + 1));
+          onClick={
+            () => {
+              if (qty < product.availableStocks) {
+                setQty(qty + 1);
+                updateParentQuantity(qty + 1);
+              }
             }
-          }}
+          }
         >
           +
         </button>

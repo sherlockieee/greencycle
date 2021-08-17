@@ -54,9 +54,11 @@ export default function CartScreen(props) {
                   <div className="cartItemProductInfo">
                     <Link to={`/products/${item.product}`}>{item.title}</Link>
                     <QuantityInput
-                      quantity={item.quantity}
+                      quantity={quantity}
                       product={item}
-                      addToCartFunction={true}
+                      updateParentQuantity={(qty) => {
+                        dispatch(addToCart(item.product, qty));
+                      }}
                     ></QuantityInput>
                     <button
                       className="btn danger"

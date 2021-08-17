@@ -1,7 +1,14 @@
 import React from "react";
 import "./CheckoutSteps.css";
 
-function CheckoutSteps(props) {
+type CheckOutProps = {
+  step1: boolean;
+  step2: boolean;
+  step3: boolean;
+  step4: boolean;
+}
+
+const CheckoutSteps = (props: CheckOutProps) => {
   return (
     <div className="checkout-steps">
       <div className={props.step1 ? "active" : ""}>Sign In</div>

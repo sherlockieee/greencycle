@@ -51,8 +51,10 @@ export default function ProductScreen(props) {
             {product.availableStocks > 0 && (
               <QuantityInput
                 quantity={quantity}
-                setQuantity={setQuantity}
                 product={product}
+                updateParentQuantity={(qty) => {
+                  setQuantity(qty);
+                }}
               />
             )}
             <Link to={`/cart/${productId}?qty=${quantity}`}>
