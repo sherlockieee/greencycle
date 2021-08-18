@@ -13,22 +13,38 @@ import {
   productListReducer,
 } from "./reducers/productReducers";
 import { userSignInReducer, userSignUpReducer } from "./reducers/userReducers";
+import { ProductCheckOut, ProductDetails } from "./types/productTypes";
+import { ShippingAddress } from "./types/shippingAddressType";
 // import { ProductCheckOut } from "./types/productTypes";
 // import { ShippingAddress } from "./types/shippingAddressType";
-// import { UserInfo } from "./types/userTypes";
+import { UserInfo } from "./types/userTypes";
 
-// interface InitialState {
-//   productList?: any,
-//   productDetails?: any,
-//   cart: any,
-//   userSignIn: {
-//     userInfo: UserInfo | null,
-//   }
+// type RootState = {
+//   productList?: {
+//     isLoading: boolean,
+//     products: Array<ProductDetails>;
+//   },
+//   productDetails?: {
+//     isLoading: boolean,
+//     products: ProductDetails,
+//   },
+//   cart?: {
+//     cartItems: Array<ProductCheckOut>,
+//     shippingAddress: ShippingAddress,
+//     paymentMethod: 'PayPal' | 'Stripe',
+//   },
+//   userSignIn?: {
+//     userInfo: UserInfo;
+//   },
 //   userSignUp?: any,
 //   orderCreate?: any,
-//   orderDetails?: any,
+//   orderDetails?: {
+//     isLoading: boolean;
+//   },
 //   orderPay?: any,
-//   orderHistory?: any,
+//   orderHistory?: {
+//     orders: []
+//   }
 // }
 
 const initialState = {
@@ -68,6 +84,8 @@ const store = createStore(
   initialState,
   composeEnhancer(applyMiddleware(thunk))
 );
+// export type RootState = ReturnType<typeof store.getState>
+// export type AppDispatch = typeof store.dispatch
 
 export default store;
 

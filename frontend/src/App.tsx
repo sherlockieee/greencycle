@@ -15,7 +15,7 @@ import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderDetailsScreen from "./screens/OrderDetailsScreen";
 import OrderHistoryScreen from "./screens/OrderHistoryScreen";
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <div className="App grid-container">
@@ -32,7 +32,7 @@ function App() {
           <Route path="/orderhistory" component={OrderHistoryScreen}></Route>
           <Route path="/" component={CatalogScreen} exact />
         </main>
-        <Footer className="footer" />
+        <Footer />
       </div>
     </BrowserRouter>
   );

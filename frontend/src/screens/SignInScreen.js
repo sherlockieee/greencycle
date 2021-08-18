@@ -20,8 +20,6 @@ function SignInScreen(props) {
   const { userInfo, isLoading, error } = userSignIn;
 
   useEffect(() => {
-    console.log(props.history);
-    console.log(props);
     if (userInfo) {
       props.history.push(redirect);
     }

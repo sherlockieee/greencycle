@@ -1,4 +1,6 @@
+
 import axios from "axios";
+import { Dispatch } from "redux";
 import {
   PRODUCT_DETAILS_FAILURE,
   PRODUCT_DETAILS_REQUEST,
@@ -7,8 +9,9 @@ import {
   PRODUCT_LIST_REQUEST,
   PRODUCT_LIST_SUCCESS,
 } from "../constants/ProductConstant";
+import { productDetailsReducerAction, productListReducerAction } from "../reducers/productReducers";
 
-export const listProducts = () => async (dispatch) => {
+export const listProducts = () => async (dispatch: Dispatch<productListReducerAction>) => {
   dispatch({
     type: PRODUCT_LIST_REQUEST,
   });
@@ -20,7 +23,7 @@ export const listProducts = () => async (dispatch) => {
   }
 };
 
-export const detailProduct = (productId) => async (dispatch) => {
+export const detailProduct = (productId: string) => async (dispatch: Dispatch<productDetailsReducerAction>) => {
   dispatch({
     type: PRODUCT_DETAILS_REQUEST,
     payload: productId,
