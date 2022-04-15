@@ -34,7 +34,7 @@ Project mockup came in 1st in 300 teams in AIESEC YouthSpeak 2021.
 * [Express.js](https://www.npmjs.com/package/express) & [Node.js](https://nodejs.org/en/) for back-end implementation 
 * [Redux](https://www.npmjs.com/package/react-redux) for state management
 * [PayPal API](https://www.developer.paypal.com) for payment processing
-* [Json Web Token](https://www.npmjs.com/package/json-web-token) for encrypted data transfer
+* [JSON Web Token](https://www.npmjs.com/package/json-web-token) for encrypted data transfer
 * [React Router Dom](https://www.npmjs.com/package/react-router-dom) to manage routing
 * [FontAwesome](https://www.npmjs.com/package/font-awesome) for icons
 * [Bcrypt](https://www.npmjs.com/package/bcrypt) for password protection
